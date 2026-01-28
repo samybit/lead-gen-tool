@@ -1,5 +1,8 @@
-#  Base image
+# Base image
 FROM python:3.11-slim
+
+# Link to repo
+LABEL org.opencontainers.image.source=https://github.com/samybit/lead-gen-tool
 
 # Working directory
 WORKDIR /app
