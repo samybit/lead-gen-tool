@@ -6,7 +6,7 @@ import time
 
 
 def scrape_books(start_url, max_pages=5):
-    headers = {
+    headers = { # fake user agent
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124 Safari/537.36"
     }
 

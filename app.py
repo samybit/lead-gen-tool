@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, send_file
 from scraper import scrape_books
-# import os <-- You can remove this now, as we aren't using file paths anymore!
 
 app = Flask(__name__)
 
