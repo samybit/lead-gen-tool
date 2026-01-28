@@ -20,13 +20,14 @@ A production-ready data pipeline that automates the extraction, cleaning, and fo
 ## 📦 Local Installation (Docker)
 This project is containerized for easy setup.
 
+1. Build the image
 ```bash
-# 1. Build the image
 docker build -t lead-gen-tool .
-
-# 2. Run the container
+```
+2. Run the container
+```bash
 docker run -p 5000:5000 lead-gen-tool
 ```
 
-📄 License
+## 📄 License
 MIT License. Free for commercial and private use.
