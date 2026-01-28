@@ -2,7 +2,7 @@
 
 A production-ready data pipeline that automates the extraction, cleaning, and formatting of e-commerce product data. Built for market researchers and dropshippers who need decision-ready data in Excel format.
 
-**[🔴 Live Demo Link](http://samyrai.pythonanywhere.com)** *(Replace with your actual link)*
+**[🔴 Live Demo Link](http://samyrai.pythonanywhere.com)**
 
 ## 🚀 Key Features
 * **Multi-Page Crawling:** Automatically detects pagination and scrapes entire categories, not just single pages.
