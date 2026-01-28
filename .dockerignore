@@ -1,0 +1,21 @@
+# Ignore the virtual environment
+venv/
+.venv/
+
+# Ignore git history and config
+.git/
+.gitignore
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local downloads/data
+downloads/
+*.xlsx
+
+# Ignore Docker meta
+Dockerfile
+.dockerignore
