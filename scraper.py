@@ -6,7 +6,7 @@ import time
 
 
 def scrape_books(start_url, max_pages=5):
-    headers = { # fake user agent
+    headers = {  # fake user agent
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124 Safari/537.36"
     }
 
@@ -18,6 +18,7 @@ def scrape_books(start_url, max_pages=5):
         print(f"Scraping: {current_url}")
 
         try:
+            # 0. Fetch and Parse HTML
             response = requests.get(current_url, headers=headers)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, "html.parser")
@@ -25,7 +26,9 @@ def scrape_books(start_url, max_pages=5):
             # 1. Extract Data
             articles = soup.find_all("article", class_="product_pod")
             for article in articles:
+                # a. Title
                 title = article.h3.a["title"]
+                # b. Price
                 price = article.find("p", class_="price_color").text
                 clean_price = float(price.replace("£", "").replace("Â", ""))
 
@@ -51,11 +54,11 @@ def scrape_books(start_url, max_pages=5):
         except Exception as e:
             return None, f"Error on {current_url}: {e}"
 
-    # 3. Export to Memory (Cloud-Ready Refactor)
+    # 3. Export to Memory (Cloud-Ready)
     df = pd.DataFrame(books_data)
 
     output = io.BytesIO()
-    # Use the 'openpyxl' engine which is compatible with Excel files
+    # Uses the 'openpyxl' engine which is compatible with Excel files
     with pd.ExcelWriter(output, engine="openpyxl") as writer:
         df.to_excel(writer, index=False)
 
